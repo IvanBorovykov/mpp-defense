@@ -37,10 +37,10 @@ section[id] { scroll-margin-top: 1.25rem; }
 .header-inner nav a:hover, .repo-link:hover { color: var(--accent); }
 .repo-link { border: 1px solid #375461; padding: .45rem .85rem; border-radius: .5rem; }
 .hero { background: radial-gradient(ellipse at 90% 5%, #183f48 0, transparent 53%), var(--navy); color: #f5fbff; }
-.hero-layout { display: grid; grid-template-columns: minmax(0, 1.12fr) minmax(20rem, .88fr); gap: clamp(2rem, 7vw, 6rem); align-items: center; padding-block: clamp(2.8rem, 5vw, 4.45rem); }
+.hero-layout { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(18rem, .7fr); gap: clamp(1.7rem, 6vw, 5rem); align-items: center; padding-block: clamp(1.85rem, 4vw, 2.65rem); }
 .kicker { color: var(--teal); font: 650 .86rem/1.35 var(--mono); letter-spacing: .065em; text-transform: uppercase; }
 .hero .kicker { color: var(--accent); }
-h1 { font-size: clamp(2.75rem, 5.8vw, 5.1rem); line-height: .99; letter-spacing: -.065em; margin: .8rem 0 1.15rem; font-weight: 760; }
+h1 { font-size: clamp(2.55rem, 5.2vw, 4.55rem); line-height: 1; letter-spacing: -.062em; margin: .65rem 0 .85rem; font-weight: 760; }
 h1 span { color: var(--accent); }
 .hero-copy { max-width: 34rem; color: #c2d1dc; font-size: clamp(1rem, 1.45vw, 1.13rem); }
 .hero-actions { display: flex; flex-wrap: wrap; gap: .7rem; margin-top: 1.5rem; }
@@ -53,6 +53,7 @@ h1 span { color: var(--accent); }
 .verification-head, .verification-foot { min-height: 3.3rem; padding-block: .8rem; font-size: .85rem; display: flex; align-items: center; color: #aac1cb; }
 .verification-head { justify-content: space-between; border-bottom: 1px solid #274c58; font-weight: 700; }
 .verification-head a { color: var(--accent); font: .85rem var(--mono); border: 1px solid #36666a; border-radius: .3rem; padding: .2rem .45rem; text-decoration: none; }
+.verification-foot a { color: var(--accent); }
 .test-row { display: grid; align-items: center; grid-template-columns: 1.55rem minmax(0, 1fr) auto; gap: .55rem; padding: .82rem 0; border-bottom: 1px solid #274c58; font-size: .94rem; }
 .test-row strong { color: var(--accent); font: 600 .87rem var(--mono); white-space: nowrap; }
 .check { color: var(--accent); text-align: center; background: #234c47; border-radius: 50%; width: 1.35rem; height: 1.35rem; line-height: 1.35rem; }
@@ -78,11 +79,12 @@ h1 span { color: var(--accent); }
 .person-summary > p:not(.kicker) { max-width: 50rem; color: var(--muted); }
 .metrics { display: flex; flex-wrap: wrap; gap: .45rem; margin-top: .85rem; }
 .metrics span { border-radius: .35rem; padding: .25rem .6rem; background: #e9eff5; color: #274053; font-size: .86rem; }
-.work-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .8rem; margin-top: 1.2rem; }
-.work-card, .stage, .commands details, .review, .chain, .commit-panel, .rubrics details { background: #fff; border: 1px solid var(--line); border-radius: .7rem; }
+.commit-section { margin-top: 1.35rem; scroll-margin-top: 1rem; }
+.work-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(14rem, 100%), 1fr)); gap: .65rem; }
+.work-card, .stage, .commands details, .review, .chain, .commit-panel, .archive { background: #fff; border: 1px solid var(--line); border-radius: .7rem; }
 .work-card { display: flex; flex-direction: column; justify-content: space-between; gap: 1rem; padding: 1.05rem; }
 .work-card h3 { font-size: 1.05rem; margin-bottom: .5rem; }
-.work-card p, .review p, .rubrics p { color: var(--muted); font-size: .94rem; }
+.work-card p, .review p, .demo-note { color: var(--muted); font-size: .94rem; }
 .evidence-links { display: flex; flex-wrap: wrap; gap: .38rem .65rem; }
 .evidence-links a { font-size: .86rem; font-weight: 650; }
 .demo-grid { display: grid; grid-template-columns: minmax(12rem, .34fr) minmax(0, 1fr); gap: .85rem; }
@@ -97,10 +99,13 @@ h1 span { color: var(--accent); }
 .stage-nav { display: flex; justify-content: flex-end; gap: .45rem; margin-top: auto; padding-top: 1rem; }
 .stage-nav button, .copy, .expand { border: 1px solid #b9ced5; color: #164d46; background: #edf7f4; border-radius: .4rem; padding: .4rem .75rem; font-weight: 650; font-size: .88rem; }
 .stage-nav button:hover:not(:disabled), .copy:hover, .expand:hover { border-color: #2a9485; }
-.commands-heading, .commits-heading { margin-top: 1.45rem; margin-bottom: .65rem; }
-.commands, .rubrics { display: grid; gap: .55rem; }
-.commands summary, .rubrics summary { cursor: pointer; padding: .72rem .9rem; font-weight: 660; }
-.commands summary::marker, .rubrics summary::marker { color: var(--teal); }
+.commands-heading, .stages-heading { margin-top: 1.2rem; margin-bottom: .65rem; }
+.commands { display: grid; grid-template-columns: minmax(0, 1fr); gap: .45rem; }
+.commands summary, .archive summary { cursor: pointer; padding: .72rem .9rem; font-weight: 660; }
+.commands summary::marker, .archive summary::marker { color: var(--teal); }
+.archive { margin-top: .7rem; }
+.archive .commit-panel { border-radius: 0 0 .7rem .7rem; border-width: 1px 0 0; }
+.archive .reviews { padding: 0 .7rem .7rem; margin-top: 0; }
 .cmd-head { display: flex; align-items: center; gap: .65rem; justify-content: space-between; padding: .55rem .8rem; background: #edf5f6; color: #405b69; font: .82rem var(--mono); }
 .commands pre { padding: .9rem; margin: 0; color: #e3f4fa; background: #142c3a; border-radius: 0 0 .65rem .65rem; overflow-x: auto; font: .87rem/1.58 var(--mono); }
 .chain { padding: 1rem; margin-bottom: 1.25rem; }
@@ -118,9 +123,6 @@ h1 span { color: var(--accent); }
 .commits time { color: var(--muted); font-size: .84rem; }
 .empty { padding: .85rem; color: var(--muted); }
 .expand { margin: .75rem .8rem; }
-.rubrics details p { padding: 0 .9rem .7rem; }
-.rubrics details .evidence-links { padding: 0 .9rem .8rem; }
-.rubrics b { margin-right: .4rem; color: var(--teal); font-family: var(--mono); }
 .notice { margin-top: 1rem; padding: .85rem; background: #ecf6f4; }
 .footer { background: var(--navy); color: #bdcdd6; }
 .footer-inner { display: flex; flex-wrap: wrap; gap: .5rem 1.4rem; justify-content: space-between; padding-block: 1.4rem; font-size: .88rem; }

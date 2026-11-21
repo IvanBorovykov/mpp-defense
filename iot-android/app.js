@@ -55,9 +55,10 @@ function renderStage() {
   get('next-stage').disabled = step === stages.length - 1;
 }
 
-function renderCommands(commands) {
-  get('commands').replaceChildren(...commands.map(({ title, platform, text }) => {
+function renderCommands(commands, openFirst) {
+  get('commands').replaceChildren(...commands.map(({ title, platform, text }, index) => {
     const details = element('details');
+    details.open = openFirst && index === 0;
     const bar = element('div', '', 'cmd-head');
     const copy = element('button', 'Копіювати', 'copy');
     const code = element('code', text);
@@ -121,7 +122,11 @@ function select(key, updateUrl = true) {
   get('person-intro').textContent = person.intro;
   get('person-metrics').replaceChildren(element('span', `${person.prs} злитих PR`), element('span', `${person.tasks} задач закрито`));
   get('work').replaceChildren(...facts(person.work, 'work-card'));
-  get('demo-info').textContent = `${person.platform} · 13 хвилин`;
+  get('archive-title').textContent = `Усі ${person.commits.length} комітів і пошук`;
+  get('demo-title').textContent = key === 'ivan' ? 'Іван · запуск і показ на Windows' : 'Сценарій демонстрації';
+  get('demo-info').textContent = `${person.platform} · ${person.duration}`;
+  get('demo-note').textContent = person.note;
+  get('commands-title').textContent = key === 'ivan' ? 'Запуск у PowerShell' : 'Команди';
   get('stages').replaceChildren(...person.stages.map(({ title }, index) => {
     const item = element('li');
     const button = element('button');
@@ -132,12 +137,11 @@ function select(key, updateUrl = true) {
     return item;
   }));
   renderStage();
-  renderCommands(person.commands);
+  renderCommands(person.commands, key === 'ivan');
   get('primary-chain').replaceChildren(
     element('h3', 'Від задачі до merge'),
     element('p', person.chain.detail),
-    links([...person.chain.links, ['Закриті задачі', person.issuesUrl]]),
-    element('p', person.note)
+    links([...person.chain.links, ['Закриті задачі', person.issuesUrl]])
   );
   get('reviews').replaceChildren(...facts(person.reviews, 'review'));
   renderCommits();
