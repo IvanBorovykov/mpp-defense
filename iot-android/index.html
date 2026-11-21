@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0c2030">
+  <meta name="description" content="Особистий внесок Івана, Назара й Дениса в IoT Diagnostic Platform. Коміти, рев’ю та сценарії захисту на Windows, macOS і Linux.">
+  <title>IoT Diagnostic Platform · Матеріали захисту</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script defer src="./evidence.js"></script>
+  <script defer src="./app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#participants">До учасників</a>
+  <header class="topbar">
+    <div class="frame header-inner">
+      <a href="./" class="brand"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span> IoT Diagnostics</a>
+      <nav aria-label="Розділи матеріалів">
+        <a href="#contribution">Внесок</a>
+        <a href="#demo">Демонстрація</a>
+        <a href="#evidence">Докази</a>
+      </nav>
+      <a class="repo-link" href="https://git.cvv-sandbox.eu.cc/Nazar/iot-diagnostic">Forgejo</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="title">
+      <div class="frame hero-layout">
+        <div>
+          <p class="kicker">Матеріали захисту</p>
+          <h1 id="title">IoT Diagnostic<br>Platform<span>.</span></h1>
+          <p class="hero-copy">Внесок команди в діагностику IoT-пристроїв і три живі сценарії показу на Windows, macOS та Linux.</p>
+          <div class="hero-actions">
+            <a class="primary" href="#participants">Обрати учасника</a>
+            <a class="secondary" href="./iot-defense-report.docx" download>Звіт у Word</a>
+          </div>
+        </div>
+        <aside class="verification" aria-label="Результати перевірки">
+          <div class="verification-head"><span>Прогін перевірок</span><a href="https://git.cvv-sandbox.eu.cc/Nazar/iot-diagnostic/commit/7198faf5999718bc87c5e4a0b99be4c6899aee0d">7198faf</a></div>
+          <div class="test-row"><span class="check" aria-hidden="true">✓</span><span>Модульні тести</span><strong>245 / 245</strong></div>
+          <div class="test-row"><span class="check" aria-hidden="true">✓</span><span>Інтеграційні тести</span><strong>110 / 110</strong></div>
+          <div class="test-row"><span class="check" aria-hidden="true">✓</span><span>API + два воркери</span><strong>11 / 11</strong></div>
+          <div class="verification-foot">Результати прогону опублікованої ревізії у WSL</div>
+        </aside>
+      </div>
+    </section>
+
+    <div class="frame content">
+      <section id="participants" class="participants" aria-labelledby="participants-title">
+        <div class="section-lead"><h2 id="participants-title">Учасники</h2><span>94 коміти · 47 злитих PR</span></div>
+        <div class="options" role="tablist" aria-label="Оберіть учасника">
+          <button class="person" id="tab-ivan" role="tab" type="button" data-person="ivan" aria-controls="person-panel" aria-selected="true"><span class="initial windows">І</span><span><strong>Іван</strong><small>Windows</small></span><span class="count">35 <small>комітів</small></span></button>
+          <button class="person" id="tab-nazar" role="tab" type="button" data-person="nazar" aria-controls="person-panel" aria-selected="false" tabindex="-1"><span class="initial macos">Н</span><span><strong>Назар</strong><small>macOS</small></span><span class="count">40 <small>комітів</small></span></button>
+          <button class="person" id="tab-denys" role="tab" type="button" data-person="denys" aria-controls="person-panel" aria-selected="false" tabindex="-1"><span class="initial linux">Д</span><span><strong>Денис</strong><small>Linux</small></span><span class="count">19 <small>комітів</small></span></button>
+        </div>
+      </section>
+
+      <noscript><p class="notice">Увімкніть JavaScript, щоб перемикати сценарії. Повний текст доступний у <a href="./iot-defense-report.docx">звіті Word</a>.</p></noscript>
+
+      <div id="person-panel" role="tabpanel" aria-labelledby="tab-ivan">
+        <section id="contribution" class="report-section" aria-labelledby="contribution-title">
+          <div class="person-summary">
+            <p id="current-label" class="kicker">Іван · Windows</p>
+            <h2 id="contribution-title">HTTP-діагностика в настільному клієнті</h2>
+            <p id="person-intro"></p>
+            <div id="person-metrics" class="metrics"></div>
+          </div>
+          <div id="work" class="work-grid"></div>
+        </section>
+
+        <section id="demo" class="report-section" aria-labelledby="demo-title">
+          <div class="section-lead"><h2 id="demo-title">Сценарій демонстрації</h2><span id="demo-info"></span></div>
+          <div class="demo-grid">
+            <ol class="stage-list" id="stages" aria-label="Етапи виступу"></ol>
+            <div class="stage" id="stage-panel">
+              <p class="kicker" id="stage-time"></p>
+              <h3 id="stage-title"></h3>
+              <ul id="stage-notes"></ul>
+              <div id="stage-links" class="evidence-links"></div>
+              <div class="stage-nav"><button type="button" id="prev-stage">Назад</button><button type="button" id="next-stage">Далі</button></div>
+            </div>
+          </div>
+          <h3 class="commands-heading">Команди для показу</h3>
+          <div id="commands" class="commands"></div>
+        </section>
+
+        <section id="evidence" class="report-section" aria-labelledby="evidence-title">
+          <div class="section-lead"><h2 id="evidence-title">Докази внеску</h2></div>
+          <div id="primary-chain" class="chain"></div>
+          <h3>Рев’ю чужих PR</h3>
+          <div id="reviews" class="reviews"></div>
+          <h3 class="commits-heading">Історія комітів</h3>
+          <div class="commit-panel">
+            <div class="searchbar"><label for="commit-search">Пошук по комітах</label><input type="search" id="commit-search" placeholder="Хеш або текст коміту" autocomplete="off"><output id="commit-count" for="commit-search"></output></div>
+            <ul id="commit-list" class="commits" aria-label="Коміти учасника"></ul>
+            <button type="button" id="expand-commits" class="expand">Усі коміти</button>
+          </div>
+        </section>
+      </div>
+
+      <section id="rubric" class="report-section" aria-labelledby="rubric-title">
+        <div class="section-lead"><h2 id="rubric-title">Критерії захисту</h2></div>
+        <div class="rubrics">
+          <details><summary><b>A</b> Процес роботи</summary><p>Історія <code>main</code>, задачі, робочі гілки та README. Дати здачі проміжних етапів і зауваження викладача підтверджуються матеріалами курсу.</p></details>
+          <details><summary><b>B</b> Особистий внесок</summary><p>У кожного учасника є ланцюг від задачі до merge, кількість закритих задач і три рев’ю з посиланнями на зауваження, виправлення та повторну перевірку.</p></details>
+          <details><summary><b>C</b> Перевірки та дані</summary><p>Покажіть запит у своїй ОС, підсумок тестів і приймальний прогін. Поріг CI — 80%. Для C4 беріть актуальну кількість critical і major та проаналізованих рядків із SonarQube. Для C5 відкрийте схему і транзакції SQLite.</p><div class="evidence-links"><a href="https://git.cvv-sandbox.eu.cc/Nazar/iot-diagnostic/actions/runs/61">Прогін CI</a><a href="https://git.cvv-sandbox.eu.cc/Nazar/iot-diagnostic/actions/runs/62">SonarQube</a><a href="https://git.cvv-sandbox.eu.cc/Nazar/iot-diagnostic/src/branch/main/DATA_MODEL.md">Модель даних</a></div></details>
+          <details><summary><b>D</b> Складність рішення</summary><p>Іван пояснює обчислення діагностичного виразу, Назар — узгодженість даних і outbox, Денис — підтвердження інциденту та бюджет SLA.</p></details>
+          <details><summary><b>E</b> Запитання, правки та запуск</summary><p>Останній етап кожного сценарію містить дві мікрозміни й спосіб перевірки. Команди запуску та підготовки даних наведені над доказами внеску.</p></details>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer"><div class="frame footer-inner"><span>IoT Diagnostic Platform · Матеріали захисту</span><a href="https://tzahorskyi.github.io/mpp-defense/iot-android/">Зразок захисту Тараса</a><a href="https://git.cvv-sandbox.eu.cc/Nazar/iot-diagnostic/commits/branch/main">Історія репозиторію</a></div></footer>
+</body>
+</html>
