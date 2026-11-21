@@ -26,6 +26,19 @@ function select(key, updateUrl = true) {
   get('details-link').textContent = detailsTitle;
   get('files-title').textContent = detailsTitle;
   get('files-note').hidden = Boolean(person.features);
+  get('pulls').hidden = !person.pulls;
+  get('pulls-link').hidden = !person.pulls;
+  if (person.pulls) {
+    get('pulls-note').textContent = `${person.pulls.length} PR у main · автор ${person.name}`;
+    get('pull-list').replaceChildren(...person.pulls.map(({ number, title, url }) => {
+      const item = element('li');
+      const link = element('a', '', 'pull-link');
+      link.href = url;
+      link.append(element('span', `#${number}`, 'pull-number'), element('span', title));
+      item.append(link);
+      return item;
+    }));
+  }
   get('speech').replaceChildren(...person.speech.map((text) => element('p', text)));
   get('files').replaceChildren(...(person.features ?? person.files).map(([paths, description]) => {
     const row = element('article', '', person.features ? 'file feature' : 'file');

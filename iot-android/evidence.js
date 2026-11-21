@@ -1,5 +1,23 @@
 window.defenseEvidence = {
   ivan: {
+    pulls: [
+      {"number": 115, "title": "Expose expression checks and anomaly reports", "url": "https://git.cvv-sandbox.eu.cc/Nazar/iot-diagnostic/pulls/115"},
+      {"number": 113, "title": "Distribute monitoring and event delivery across workers", "url": "https://git.cvv-sandbox.eu.cc/Nazar/iot-diagnostic/pulls/113"},
+      {"number": 102, "title": "Validate API input and return problem details", "url": "https://git.cvv-sandbox.eu.cc/Nazar/iot-diagnostic/pulls/102"},
+      {"number": 79, "title": "Preserve device redirects and prevent cross-origin follow-up", "url": "https://git.cvv-sandbox.eu.cc/Nazar/iot-diagnostic/pulls/79"},
+      {"number": 69, "title": "Detect anomalies in telemetry signals", "url": "https://git.cvv-sandbox.eu.cc/Nazar/iot-diagnostic/pulls/69"},
+      {"number": 54, "title": "Integrate telemetry validation rule controls", "url": "https://git.cvv-sandbox.eu.cc/Nazar/iot-diagnostic/pulls/54"},
+      {"number": 41, "title": "Evaluate combined diagnostic expressions", "url": "https://git.cvv-sandbox.eu.cc/Nazar/iot-diagnostic/pulls/41"},
+      {"number": 36, "title": "Test diagnostic boundaries and malformed input", "url": "https://git.cvv-sandbox.eu.cc/Nazar/iot-diagnostic/pulls/36"},
+      {"number": 33, "title": "Expose availability analytics", "url": "https://git.cvv-sandbox.eu.cc/Nazar/iot-diagnostic/pulls/33"},
+      {"number": 32, "title": "Report HTTP response failures", "url": "https://git.cvv-sandbox.eu.cc/Nazar/iot-diagnostic/pulls/32"},
+      {"number": 30, "title": "Export measurement reports as CSV", "url": "https://git.cvv-sandbox.eu.cc/Nazar/iot-diagnostic/pulls/30"},
+      {"number": 28, "title": "Execute and record HTTP device requests", "url": "https://git.cvv-sandbox.eu.cc/Nazar/iot-diagnostic/pulls/28"},
+      {"number": 27, "title": "Manage device validation rules", "url": "https://git.cvv-sandbox.eu.cc/Nazar/iot-diagnostic/pulls/27"},
+      {"number": 12, "title": "Validate numeric telemetry ranges", "url": "https://git.cvv-sandbox.eu.cc/Nazar/iot-diagnostic/pulls/12"},
+      {"number": 9, "title": "Validate required JSON fields", "url": "https://git.cvv-sandbox.eu.cc/Nazar/iot-diagnostic/pulls/9"},
+      {"number": 8, "title": "Define diagnostics engine interface", "url": "https://git.cvv-sandbox.eu.cc/Nazar/iot-diagnostic/pulls/8"}
+    ],
     name: 'Іван',
     platform: 'Windows',
     title: 'Перевірки пристроїв і діагностика',
@@ -27,6 +45,29 @@ window.defenseEvidence = {
     ]
   },
   nazar: {
+    pulls: [
+      {"number": 118, "title": "Document the data model and analysis endpoints", "url": "https://git.cvv-sandbox.eu.cc/Nazar/iot-diagnostic/pulls/118"},
+      {"number": 116, "title": "Expose paged history and period reports", "url": "https://git.cvv-sandbox.eu.cc/Nazar/iot-diagnostic/pulls/116"},
+      {"number": 111, "title": "Publish measurement events through a transactional outbox", "url": "https://git.cvv-sandbox.eu.cc/Nazar/iot-diagnostic/pulls/111"},
+      {"number": 110, "title": "Start the API with one command and simplify the README", "url": "https://git.cvv-sandbox.eu.cc/Nazar/iot-diagnostic/pulls/110"},
+      {"number": 108, "title": "Add JWT roles and device group access", "url": "https://git.cvv-sandbox.eu.cc/Nazar/iot-diagnostic/pulls/108"},
+      {"number": 106, "title": "Enforce data integrity with constraints and transactions", "url": "https://git.cvv-sandbox.eu.cc/Nazar/iot-diagnostic/pulls/106"},
+      {"number": 90, "title": "Resolve scheduler test analysis findings", "url": "https://git.cvv-sandbox.eu.cc/Nazar/iot-diagnostic/pulls/90"},
+      {"number": 88, "title": "Prevent stale device details during selection changes", "url": "https://git.cvv-sandbox.eu.cc/Nazar/iot-diagnostic/pulls/88"},
+      {"number": 87, "title": "Simplify JSON diagnostic validation", "url": "https://git.cvv-sandbox.eu.cc/Nazar/iot-diagnostic/pulls/87"},
+      {"number": 82, "title": "Prevent starvation in scheduled device monitoring", "url": "https://git.cvv-sandbox.eu.cc/Nazar/iot-diagnostic/pulls/82"},
+      {"number": 76, "title": "Add opt-in scheduled device monitoring", "url": "https://git.cvv-sandbox.eu.cc/Nazar/iot-diagnostic/pulls/76"},
+      {"number": 75, "title": "Report latency percentiles and availability per period", "url": "https://git.cvv-sandbox.eu.cc/Nazar/iot-diagnostic/pulls/75"},
+      {"number": 65, "title": "Log device request outcomes", "url": "https://git.cvv-sandbox.eu.cc/Nazar/iot-diagnostic/pulls/65"},
+      {"number": 61, "title": "Document application architecture and API setup", "url": "https://git.cvv-sandbox.eu.cc/Nazar/iot-diagnostic/pulls/61"},
+      {"number": 57, "title": "Page and filter measurement history", "url": "https://git.cvv-sandbox.eu.cc/Nazar/iot-diagnostic/pulls/57"},
+      {"number": 20, "title": "Expose measurement and diagnostic history", "url": "https://git.cvv-sandbox.eu.cc/Nazar/iot-diagnostic/pulls/20"},
+      {"number": 18, "title": "Simulate HTTP errors malformed JSON and timeouts", "url": "https://git.cvv-sandbox.eu.cc/Nazar/iot-diagnostic/pulls/18"},
+      {"number": 17, "title": "Simulate normal and out-of-range telemetry", "url": "https://git.cvv-sandbox.eu.cc/Nazar/iot-diagnostic/pulls/17"},
+      {"number": 16, "title": "Implement device CRUD endpoints", "url": "https://git.cvv-sandbox.eu.cc/Nazar/iot-diagnostic/pulls/16"},
+      {"number": 5, "title": "Define IoT device and telemetry contracts", "url": "https://git.cvv-sandbox.eu.cc/Nazar/iot-diagnostic/pulls/5"},
+      {"number": 4, "title": "Add SQLite persistence and initial migration", "url": "https://git.cvv-sandbox.eu.cc/Nazar/iot-diagnostic/pulls/4"}
+    ],
     name: 'Назар',
     platform: 'macOS',
     title: 'API, SQLite та історія вимірювань',
@@ -50,6 +91,18 @@ window.defenseEvidence = {
     ]
   },
   denys: {
+    pulls: [
+      {"number": 120, "title": "Resolve SonarQube findings on main", "url": "https://git.cvv-sandbox.eu.cc/Nazar/iot-diagnostic/pulls/120"},
+      {"number": 117, "title": "Expose reliability metrics", "url": "https://git.cvv-sandbox.eu.cc/Nazar/iot-diagnostic/pulls/117"},
+      {"number": 114, "title": "Automate the acceptance run and record results", "url": "https://git.cvv-sandbox.eu.cc/Nazar/iot-diagnostic/pulls/114"},
+      {"number": 101, "title": "Resolve analyzer findings and gate quality in CI", "url": "https://git.cvv-sandbox.eu.cc/Nazar/iot-diagnostic/pulls/101"},
+      {"number": 80, "title": "Calculate incidents, MTBF, MTTR and SLA", "url": "https://git.cvv-sandbox.eu.cc/Nazar/iot-diagnostic/pulls/80"},
+      {"number": 78, "title": "Integrate SonarQube analysis and backend coverage", "url": "https://git.cvv-sandbox.eu.cc/Nazar/iot-diagnostic/pulls/78"},
+      {"number": 74, "title": "Add persistent alert acknowledgement", "url": "https://git.cvv-sandbox.eu.cc/Nazar/iot-diagnostic/pulls/74"},
+      {"number": 72, "title": "Add configurable telemetry trends and summaries", "url": "https://git.cvv-sandbox.eu.cc/Nazar/iot-diagnostic/pulls/72"},
+      {"number": 62, "title": "Configure Forgejo CI and contribution templates", "url": "https://git.cvv-sandbox.eu.cc/Nazar/iot-diagnostic/pulls/62"},
+      {"number": 13, "title": "Calculate device availability", "url": "https://git.cvv-sandbox.eu.cc/Nazar/iot-diagnostic/pulls/13"}
+    ],
     name: 'Денис',
     platform: 'Linux',
     title: 'Аналітика надійності та автоматичні перевірки',
