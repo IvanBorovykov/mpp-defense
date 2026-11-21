@@ -66,6 +66,12 @@ section[id] { scroll-margin-top: 1rem; }
 .file h4 { margin: 0; color: var(--green); font-size: .9rem; font-family: var(--mono); overflow-wrap: anywhere; }
 .feature h4 { font-family: inherit; font-size: 1rem; line-height: 1.35; }
 .file p { color: #304653; }
+.change-list { list-style: none; padding: 0; margin: 0; background: white; border: 1px solid var(--line); border-radius: .55rem; }
+.change { display: grid; grid-template-columns: 6rem minmax(0, 1fr); gap: .4rem 1rem; align-items: baseline; padding: .58rem .8rem; }
+.change + .change { border-top: 1px solid var(--line); }
+.change code { color: var(--green); font: 700 .88rem var(--mono); }
+.change small { display: block; color: var(--muted); font-size: .8rem; }
+.change p { color: #304653; }
 .pull-list { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .52rem; }
 .pull-link { display: flex; align-items: baseline; gap: .55rem; padding: .63rem .75rem; height: 100%; border: 1px solid var(--line); border-radius: .55rem; background: white; text-decoration: none; }
 .pull-link:hover { border-color: #259583; background: #e9f9f4; }
@@ -79,6 +85,8 @@ footer { padding-block: 1rem; color: #c7d9de; background: var(--navy); font-size
   .tabs button { display: grid; padding: .55rem .45rem; gap: .35rem; }
   .initial { width: 1.65rem; height: 1.65rem; font-size: .82rem; }
   .file { grid-template-columns: minmax(0, 1fr); gap: .28rem; }
+  .change { grid-template-columns: minmax(0, 1fr); gap: .15rem; }
+  .change small { display: inline; margin-left: .55rem; }
   .pull-list { grid-template-columns: minmax(0, 1fr); }
   .hero { padding-block: 1.5rem; }
 }

@@ -26,6 +26,20 @@ function select(key, updateUrl = true) {
   get('details-link').textContent = detailsTitle;
   get('files-title').textContent = detailsTitle;
   get('files-note').hidden = Boolean(person.features);
+  get('changes').hidden = !person.changes;
+  get('changes-link').hidden = !person.changes;
+  if (person.changes) {
+    get('changes-note').textContent = `${person.changes.length} змін у main · ${person.name}`;
+    const rows = [...person.changes, ...(person.localChanges ?? [])];
+    get('change-list').replaceChildren(...rows.map(([hash, summary, status]) => {
+      const item = element('li', '', 'change');
+      const label = element('span');
+      label.append(element('code', hash));
+      if (status) label.append(element('small', status));
+      item.append(label, element('p', summary));
+      return item;
+    }));
+  }
   get('pulls').hidden = !person.pulls;
   get('pulls-link').hidden = !person.pulls;
   if (person.pulls) {
