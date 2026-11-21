@@ -12,18 +12,18 @@ window.defenseEvidence = {
       'Окрема частина — робота кількох воркерів. У WorkerCoordination.cs я додав тимчасове право воркера на перевірку конкретного пристрою. Під час зупинки право звільняється, і інший воркер може продовжити моніторинг. У тестах я перевірив межі правил, некоректний JSON, обчислення виразів, аномалії та роботу двох воркерів зі спільними даними.'
     ],
     files: [
-      ['Program.cs', 'Додав виконання HTTP-перевірок, запис відповідей і таймаутів, керування правилами, експорт CSV та відповідь зі статистикою доступності. Уточнив обробку некоректного тіла запиту та вимкнув автоматичне слідування за перенаправленнями під час перевірки пристрою.'],
-      ['DiagnosticEngine.cs', 'Додав рушій діагностики, перевірку обов’язкових полів JSON та включні числові межі.'],
-      ['MainPage.xaml', 'Підключив поля й елементи керування правилами діагностики до Windows та Android клієнта.'],
-      ['InputValidation.cs', 'Додав централізовану перевірку даних пристрою, правил і параметрів HTTP-запиту.'],
-      ['Expressions/*.cs', 'Додав лексер, парсер, обчислення і форматування виразів. Обробив помилки синтаксису та доступ до полів відповіді.'],
-      ['AnalysisEndpoints.cs', 'Додав API для перевірки виразів на збережених вимірюваннях і отримання звіту про аномалії.'],
-      ['AnomalyAnalyzer.cs, Detectors.cs', 'Додав побудову сигналу з вимірювань і перевірки на стрибки, незмінні ділянки, темп зміни й пропуски.'],
-      ['HysteresisThresholdDetector.cs', 'Додав окремі пороги створення й скидання попередження для стабільної роботи біля межі.'],
-      ['WorkerCoordination.cs, DeviceMonitoringWorker.cs, Outbox.cs', 'Додав координацію між воркерами для планових перевірок і доставки подій. Допрацював звільнення права на перевірку після зупинки.'],
-      ['AddWorkerLeases.cs, ops/cluster/compose.yml', 'Додав міграцію для координації та конфігурацію для запуску API з двома воркерами.'],
-      ['DiagnosticsTests.cs, DiagnosticExpressionTests.cs, AnomalyDetectionTests.cs', 'Додав тести правил, меж, помилок, пріоритетів операторів і детекторів.'],
-      ['ValidationTests.cs, AnalysisEndpointTests.cs, WorkerCoordinationTests.cs', 'Додав інтеграційні перевірки API, правил доступу та взаємодії вузлів. Окремо перевірив міграції попереджень, плановий моніторинг і перенаправлення.']
+      [['src/IoT.Api/Program.cs'], 'Додав виконання HTTP-перевірок, запис відповідей і таймаутів, керування правилами, експорт CSV та відповідь зі статистикою доступності. Уточнив обробку некоректного тіла запиту та вимкнув автоматичне слідування за перенаправленнями під час перевірки пристрою.'],
+      [['src/IoT.Diagnostics/DiagnosticEngine.cs'], 'Додав рушій діагностики, перевірку обов’язкових полів JSON та включні числові межі.'],
+      [['src/IoT.Mobile/MainPage.xaml'], 'Підключив поля й елементи керування правилами діагностики до Windows та Android клієнта.'],
+      [['src/IoT.Api/InputValidation.cs'], 'Додав централізовану перевірку даних пристрою, правил і параметрів HTTP-запиту.'],
+      [['src/IoT.Diagnostics/Expressions/'], 'Додав лексер, парсер, обчислення і форматування виразів. Обробив помилки синтаксису та доступ до полів відповіді.'],
+      [['src/IoT.Api/AnalysisEndpoints.cs'], 'Додав API для перевірки виразів на збережених вимірюваннях і отримання звіту про аномалії.'],
+      [['src/IoT.Diagnostics/Anomalies/AnomalyAnalyzer.cs', 'src/IoT.Diagnostics/Anomalies/Detectors.cs'], 'Додав побудову сигналу з вимірювань і перевірки на стрибки, незмінні ділянки, темп зміни й пропуски.'],
+      [['src/IoT.Diagnostics/Anomalies/HysteresisThresholdDetector.cs'], 'Додав окремі пороги створення й скидання попередження для стабільної роботи біля межі.'],
+      [['src/IoT.Api/WorkerCoordination.cs', 'src/IoT.Api/DeviceMonitoringWorker.cs', 'src/IoT.Api/Outbox.cs'], 'Додав координацію між воркерами для планових перевірок і доставки подій. Допрацював звільнення права на перевірку після зупинки.'],
+      [['src/IoT.Infrastructure/Migrations/20261120085904_AddWorkerLeases.cs', 'ops/cluster/compose.yml'], 'Додав міграцію для координації та конфігурацію для запуску API з двома воркерами.'],
+      [['tests/IoT.UnitTests/DiagnosticsTests.cs', 'tests/IoT.UnitTests/DiagnosticExpressionTests.cs', 'tests/IoT.UnitTests/AnomalyDetectionTests.cs'], 'Додав тести правил, меж, помилок, пріоритетів операторів і детекторів.'],
+      [['tests/IoT.IntegrationTests/ValidationTests.cs', 'tests/IoT.IntegrationTests/AnalysisEndpointTests.cs', 'tests/IoT.IntegrationTests/WorkerCoordinationTests.cs'], 'Додав інтеграційні перевірки API, правил доступу та взаємодії вузлів. Окремо перевірив міграції попереджень, плановий моніторинг і перенаправлення.']
     ]
   },
   nazar: {
@@ -38,15 +38,15 @@ window.defenseEvidence = {
       'У HistoryEndpoints.cs я зробив фільтрування і перегляд історії сторінками, щоб клієнт забирав лише потрібну частину вимірювань. За цією історією формуються звіти з доступністю та затримками за вибраний період, зокрема у CSV і Markdown. Я також додав тести для доступу, обмежень бази, повторної доставки подій та історії й описав схему в DATA_MODEL.md.'
     ],
     files: [
-      ['Models.cs, IoTDbContext.cs, Migrations/', 'Описав сутності, створив схему SQLite, зв’язки, унікальні індекси, обмеження й міграції для нових полів та таблиць.'],
-      ['Program.cs', 'Додав CRUD пристроїв, симулятор, історію і підтвердження попереджень. Зробив атомарну заміну правил і обробку конфліктів даних.'],
-      ['DeviceMonitoringWorker.cs, DeviceRequestExecutor.cs, MonitoringSchedule.cs', 'Додав плановий моніторинг, спільний виконавець перевірок та порядок планування пристроїв.'],
-      ['Auth.cs', 'Додав JWT, ролі Viewer, Operator та Admin, фільтрацію пристроїв за групою й видачу тестового токена в Development.'],
-      ['Events.cs, Outbox.cs', 'Додав події, чергу outbox, оновлення зведеного стану пристрою та журнал аудиту.'],
-      ['MeasurementFilter.cs, PageCursor.cs, MeasurementPaging.cs, HistoryEndpoints.cs', 'Додав фільтри, курсор для послідовної видачі сторінок і запити історії та звітів.'],
-      ['DeviceReport.cs, LatencyStatistics.cs, ReportRenderer.cs', 'Додав розрахунок метрик за періодами та представлення звіту у CSV і Markdown.'],
-      ['AuthorizationTests.cs, IntegrityTests.cs, EventProcessingTests.cs, HistoryEndpointTests.cs', 'Перевірив ролі й групи, цілісність бази, повторну доставку подій та формати історії.'],
-      ['compose.yml, DATA_MODEL.md, API_DOCUMENTATION.md', 'Додав контейнерний запуск API й задокументував схему, транзакції та API.']
+      [['src/IoT.Domain/Models.cs', 'src/IoT.Infrastructure/IoTDbContext.cs', 'src/IoT.Infrastructure/Migrations/'], 'Описав сутності, створив схему SQLite, зв’язки, унікальні індекси, обмеження й міграції для нових полів та таблиць.'],
+      [['src/IoT.Api/Program.cs'], 'Додав CRUD пристроїв, симулятор, історію і підтвердження попереджень. Зробив атомарну заміну правил і обробку конфліктів даних.'],
+      [['src/IoT.Api/DeviceMonitoringWorker.cs', 'src/IoT.Api/DeviceRequestExecutor.cs', 'src/IoT.Domain/MonitoringSchedule.cs'], 'Додав плановий моніторинг, спільний виконавець перевірок та порядок планування пристроїв.'],
+      [['src/IoT.Api/Auth.cs'], 'Додав JWT, ролі Viewer, Operator та Admin, фільтрацію пристроїв за групою й видачу тестового токена в Development.'],
+      [['src/IoT.Domain/Events.cs', 'src/IoT.Api/Outbox.cs'], 'Додав події, чергу outbox, оновлення зведеного стану пристрою та журнал аудиту.'],
+      [['src/IoT.Infrastructure/Querying/MeasurementFilter.cs', 'src/IoT.Infrastructure/Querying/PageCursor.cs', 'src/IoT.Infrastructure/Querying/MeasurementPaging.cs', 'src/IoT.Api/HistoryEndpoints.cs'], 'Додав фільтри, курсор для послідовної видачі сторінок і запити історії та звітів.'],
+      [['src/IoT.Analytics/Reports/DeviceReport.cs', 'src/IoT.Analytics/Reports/LatencyStatistics.cs', 'src/IoT.Analytics/Reports/ReportRenderer.cs'], 'Додав розрахунок метрик за періодами та представлення звіту у CSV і Markdown.'],
+      [['tests/IoT.IntegrationTests/AuthorizationTests.cs', 'tests/IoT.IntegrationTests/IntegrityTests.cs', 'tests/IoT.IntegrationTests/EventProcessingTests.cs', 'tests/IoT.IntegrationTests/HistoryEndpointTests.cs'], 'Перевірив ролі й групи, цілісність бази, повторну доставку подій та формати історії.'],
+      [['compose.yml', 'DATA_MODEL.md', 'API_DOCUMENTATION.md'], 'Додав контейнерний запуск API й задокументував схему, транзакції та API.']
     ]
   },
   denys: {
@@ -61,13 +61,13 @@ window.defenseEvidence = {
       'Також я налаштував статичний аналіз у SonarQube й виправив зауваження аналізатора в серверному коді. Тестами окремо перевірив метрики телеметрії, інциденти, SLA та некоректні параметри запиту надійності.'
     ],
     files: [
-      ['Statistics.cs, TelemetryAnalysis.cs', 'Додав підрахунок успішних перевірок і числову статистику за вибраним полем телеметрії.'],
-      ['ReliabilityMetrics.cs, SlaEvaluation.cs', 'Додав розрахунок інцидентів, простою, часу відновлення та бюджету SLA.'],
-      ['ReliabilityEndpoints.cs', 'Додав API метрик за періодом, перевірку діапазону часу й порога SLA.'],
-      ['ReliabilityMetricsTests.cs, ReliabilityEndpointTests.cs, TelemetryAnalysisTests.cs', 'Додав тести обчислень, крайових значень і валідації параметрів API.'],
-      ['acceptance-run.sh', 'Додав приймальну перевірку API з двома воркерами, симулятором, аудитом та журналами.'],
-      ['.forgejo/workflows/ci.yml, coverlet.runsettings', 'Налаштував тести, збір покриття, поріг якості, приймальний прогін і збірку Android.'],
-      ['.forgejo/workflows/sonarqube.yml, Directory.Build.props', 'Підключив статичний аналіз, налаштував правила аналізатора й виправив його зауваження у кількох модулях.']
+      [['src/IoT.Analytics/Statistics.cs', 'src/IoT.Analytics/TelemetryAnalysis.cs'], 'Додав підрахунок успішних перевірок і числову статистику за вибраним полем телеметрії.'],
+      [['src/IoT.Analytics/Reliability/ReliabilityMetrics.cs', 'src/IoT.Analytics/Reliability/SlaEvaluation.cs'], 'Додав розрахунок інцидентів, простою, часу відновлення та бюджету SLA.'],
+      [['src/IoT.Api/ReliabilityEndpoints.cs'], 'Додав API метрик за періодом, перевірку діапазону часу й порога SLA.'],
+      [['tests/IoT.UnitTests/ReliabilityMetricsTests.cs', 'tests/IoT.IntegrationTests/ReliabilityEndpointTests.cs', 'tests/IoT.UnitTests/TelemetryAnalysisTests.cs'], 'Додав тести обчислень, крайових значень і валідації параметрів API.'],
+      [['scripts/acceptance-run.sh'], 'Додав приймальну перевірку API з двома воркерами, симулятором, аудитом та журналами.'],
+      [['.forgejo/workflows/ci.yml', 'coverlet.runsettings'], 'Налаштував тести, збір покриття, поріг якості, приймальний прогін і збірку Android.'],
+      [['.forgejo/workflows/sonarqube.yml', 'Directory.Build.props'], 'Підключив статичний аналіз, налаштував правила аналізатора й виправив його зауваження у кількох модулях.']
     ]
   },
   value: {

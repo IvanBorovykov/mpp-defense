@@ -58,7 +58,11 @@ section[id] { scroll-margin-top: 1rem; }
 .speech p { max-width: 53rem; }
 .speech p + p { margin-top: .82rem; }
 .files { display: grid; gap: .55rem; }
-.file { display: grid; grid-template-columns: minmax(11rem, 30%) minmax(0, 1fr); gap: .75rem 1.15rem; border: 1px solid var(--line); border-radius: .55rem; background: white; padding: .82rem .95rem; }
+.files-note { margin-bottom: .65rem; color: var(--muted); font-size: .875rem; }
+.file { display: grid; grid-template-columns: minmax(11rem, 37%) minmax(0, 1fr); gap: .75rem 1.15rem; border: 1px solid var(--line); border-radius: .55rem; background: white; padding: .82rem .95rem; }
+.file-paths { list-style: none; padding: 0; margin: 0; min-width: 0; }
+.file-paths li + li { margin-top: .3rem; }
+.file-paths code { color: var(--green); font: 650 .86rem/1.4 var(--mono); overflow-wrap: anywhere; }
 .file h4 { margin: 0; color: var(--green); font-size: .9rem; font-family: var(--mono); overflow-wrap: anywhere; }
 .feature h4 { font-family: inherit; font-size: 1rem; line-height: 1.35; }
 .file p { color: #304653; }

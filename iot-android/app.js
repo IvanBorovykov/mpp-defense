@@ -25,10 +25,22 @@ function select(key, updateUrl = true) {
   get('summary').textContent = person.summary;
   get('details-link').textContent = detailsTitle;
   get('files-title').textContent = detailsTitle;
+  get('files-note').hidden = Boolean(person.features);
   get('speech').replaceChildren(...person.speech.map((text) => element('p', text)));
-  get('files').replaceChildren(...(person.features ?? person.files).map(([title, description]) => {
+  get('files').replaceChildren(...(person.features ?? person.files).map(([paths, description]) => {
     const row = element('article', '', person.features ? 'file feature' : 'file');
-    row.append(element('h4', title), element('p', description));
+    if (person.features) {
+      row.append(element('h4', paths));
+    } else {
+      const list = element('ul', '', 'file-paths');
+      list.append(...paths.map((path) => {
+        const item = element('li');
+        item.append(element('code', path));
+        return item;
+      }));
+      row.append(list);
+    }
+    row.append(element('p', description));
     return row;
   }));
   if (updateUrl) {
