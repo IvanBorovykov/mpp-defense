@@ -37,7 +37,7 @@ h1 { margin: .38rem 0 .6rem; font-weight: 760; font-size: clamp(2.3rem, 5.4vw, 4
 .hero > p:last-child { color: #d3e4ea; max-width: 44rem; }
 main { padding-block: 1.45rem 3.25rem; }
 .people h2 { font-size: 1.15rem; margin-bottom: .65rem; }
-.tabs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .6rem; }
+.tabs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .6rem; }
 .tabs button { padding: .72rem .9rem; border: 1px solid var(--line); border-radius: .55rem; color: var(--ink); background: white; text-align: left; display: flex; gap: .7rem; align-items: center; cursor: pointer; font: inherit; }
 .tabs button[aria-selected='true'] { border-color: #259583; box-shadow: inset 0 -3px 0 #259583; background: #e9f9f4; }
 .tabs button:hover { border-color: #259583; }
@@ -47,6 +47,7 @@ main { padding-block: 1.45rem 3.25rem; }
 .ivan { background: #d4f1e8; color: #155a4c; }
 .nazar { background: #e4ebfc; color: #314b88; }
 .denys { background: #f7eddb; color: #74541b; }
+.value { background: #ddeff3; color: #235d6c; }
 section[id] { scroll-margin-top: 1rem; }
 .heading { margin: 1.8rem 0 1.35rem; padding-left: .95rem; border-left: 3px solid #269682; }
 .heading h2 { margin: .35rem 0 .45rem; font-size: clamp(1.55rem, 3.5vw, 2.35rem); letter-spacing: -.035em; }
@@ -59,9 +60,11 @@ section[id] { scroll-margin-top: 1rem; }
 .files { display: grid; gap: .55rem; }
 .file { display: grid; grid-template-columns: minmax(11rem, 30%) minmax(0, 1fr); gap: .75rem 1.15rem; border: 1px solid var(--line); border-radius: .55rem; background: white; padding: .82rem .95rem; }
 .file h4 { margin: 0; color: var(--green); font-size: .9rem; font-family: var(--mono); overflow-wrap: anywhere; }
+.feature h4 { font-family: inherit; font-size: 1rem; line-height: 1.35; }
 .file p { color: #304653; }
 .notice { padding: .75rem; margin-top: .55rem; }
 footer { padding-block: 1rem; color: #c7d9de; background: var(--navy); font-size: .88rem; }
+@media (max-width: 52rem) { .tabs { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 40rem) {
   .frame { width: calc(100% - 1.65rem); }
   .tabs { gap: .35rem; }

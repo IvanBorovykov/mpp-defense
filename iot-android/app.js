@@ -13,19 +13,22 @@ function element(tag, text, className) {
 
 function select(key, updateUrl = true) {
   const person = contributions[key];
+  const detailsTitle = person.features ? 'Ключові можливості' : 'Робота за файлами';
   for (const tab of tabs) {
     const active = tab.dataset.person === key;
     tab.setAttribute('aria-selected', String(active));
     tab.tabIndex = active ? 0 : -1;
   }
   get('participant').setAttribute('aria-labelledby', 'tab-' + key);
-  get('participant-label').textContent = person.name + ' · ' + person.platform;
+  get('participant-label').textContent = person.platform ? person.name + ' · ' + person.platform : person.name;
   get('headline').textContent = person.title;
   get('summary').textContent = person.summary;
+  get('details-link').textContent = detailsTitle;
+  get('files-title').textContent = detailsTitle;
   get('speech').replaceChildren(...person.speech.map((text) => element('p', text)));
-  get('files').replaceChildren(...person.files.map(([paths, description]) => {
-    const row = element('article', '', 'file');
-    row.append(element('h4', paths), element('p', description));
+  get('files').replaceChildren(...(person.features ?? person.files).map(([title, description]) => {
+    const row = element('article', '', person.features ? 'file feature' : 'file');
+    row.append(element('h4', title), element('p', description));
     return row;
   }));
   if (updateUrl) {
