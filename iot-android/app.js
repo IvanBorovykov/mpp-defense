@@ -123,10 +123,10 @@ function select(key, updateUrl = true) {
   get('person-metrics').replaceChildren(element('span', `${person.prs} злитих PR`), element('span', `${person.tasks} задач закрито`));
   get('work').replaceChildren(...facts(person.work, 'work-card'));
   get('archive-title').textContent = `Усі ${person.commits.length} комітів і пошук`;
-  get('demo-title').textContent = key === 'ivan' ? 'Іван · запуск і показ на Windows' : 'Сценарій демонстрації';
+  get('demo-title').textContent = key === 'ivan' ? 'Іван · показ на Windows' : 'Сценарій демонстрації';
   get('demo-info').textContent = `${person.platform} · ${person.duration}`;
   get('demo-note').textContent = person.note;
-  get('commands-title').textContent = key === 'ivan' ? 'Запуск у PowerShell' : 'Команди';
+  get('commands-title').textContent = key === 'ivan' ? 'Підключення та команди PowerShell' : 'Команди';
   get('stages').replaceChildren(...person.stages.map(({ title }, index) => {
     const item = element('li');
     const button = element('button');
